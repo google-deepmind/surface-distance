@@ -1,4 +1,4 @@
-# Surface distance metrics
+# Surface Distance Based Metrics
 
 ## Summary
 When comparing multiple image segmentations, performance metrics that assess how closely the surfaces align can be a useful difference measure. This group of surface distance based measures computes the closest distances from all surface points on one segmentation to the points on another surface, and returns performance metrics between the two. This distance can be used alongside other metrics to compare segmented regions against a ground truth.
