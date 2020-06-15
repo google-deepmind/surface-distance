@@ -96,8 +96,8 @@ class SurfaceDistanceTest(parameterized.TestCase, absltest.TestCase):
   ))
   def test_compute_surface_distances_raises_on_incompatible_shapes(
       self, mask_gt, mask_pred, spacing_mm):
-    with self.assertRaisesRegexp(ValueError,
-                                 'The arguments must be of compatible shape'):
+    with self.assertRaisesRegex(ValueError,
+                                'The arguments must be of compatible shape'):
       surface_distance.compute_surface_distances(mask_gt, mask_pred, spacing_mm)
 
   @parameterized.parameters((
@@ -111,8 +111,8 @@ class SurfaceDistanceTest(parameterized.TestCase, absltest.TestCase):
   ))
   def test_compute_surface_distances_raises_on_invalid_shapes(
       self, mask_gt, mask_pred, spacing_mm):
-    with self.assertRaisesRegexp(ValueError,
-                                 'Only 2D and 3D masks are supported'):
+    with self.assertRaisesRegex(ValueError,
+                                'Only 2D and 3D masks are supported'):
       surface_distance.compute_surface_distances(mask_gt, mask_pred, spacing_mm)
 
 
@@ -365,5 +365,5 @@ class SurfaceDistance3DTest(SurfaceDistanceTest):
         expected_volumetric_dice=np.nan)
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
   absltest.main()
