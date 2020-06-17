@@ -13,5 +13,5 @@
 # limitations under the License.
 """Surface distance module: https://github.com/deepmind/surface-distance ."""
 
-from metrics import *  # pylint: disable=wildcard-import
+from .metrics import *  # pylint: disable=wildcard-import
 __version__ = "0.1"
