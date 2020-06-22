@@ -177,9 +177,9 @@ def compute_surface_distances(mask_gt,
     ValueError: If the masks and the `spacing_mm` arguments are of incompatible
       shape or type. Or if the masks are not 2D or 3D.
   """
-  # The terms used in this function are for the 3D case In particular, surface
-  # in 2D stands for contours in 3D. the 2D. The surface elements in 3D
-  # correspond to the line elements in 2D.
+  # The terms used in this function are for the 3D case. In particular, surface
+  # in 2D stands for contours in 3D. The surface elements in 3D correspond to
+  # the line elements in 2D.
 
   _assert_is_bool_numpy_array("mask_gt", mask_gt)
   _assert_is_bool_numpy_array("mask_pred", mask_pred)
