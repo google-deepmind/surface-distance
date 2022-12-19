@@ -46,7 +46,7 @@ def _check_3d_numpy_array(name, array):
 
 def _assert_is_bool_numpy_array(name, array):
   _assert_is_numpy_array(name, array)
-  if array.dtype != np.bool:
+  if array.dtype != bool:
     raise ValueError("The argument {!r} should be a numpy array of type bool, "
                      "not {}".format(name, array.dtype))
 
