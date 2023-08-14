@@ -15,7 +15,7 @@
 
 from setuptools import setup
 
-setup(name="Surface Distance Based Measures",
+setup(name="surface_distance",
       version="0.1",
       description=(
           "Library containing utilities to compute performance metrics for "
