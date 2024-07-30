@@ -15,11 +15,13 @@
 
 from setuptools import setup
 
-setup(name="Surface Distance Based Measures",
+setup(name="surface-distance",
       version="0.1",
       description=(
           "Library containing utilities to compute performance metrics for "
           "segmentation"),
+      long_description=open('README.md').read(),
+      long_description_content_type='text/markdown',
       url="https://github.com/deepmind/surface-distance",
       author="DeepMind",
       license="Apache License, Version 2.0",
