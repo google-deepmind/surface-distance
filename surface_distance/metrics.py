@@ -254,13 +254,13 @@ def compute_surface_distances(mask_gt,
     distmap_gt = ndimage.morphology.distance_transform_edt(
         ~borders_gt, sampling=spacing_mm)
   else:
-    distmap_gt = np.Inf * np.ones(borders_gt.shape)
+    distmap_gt = np.inf * np.ones(borders_gt.shape)
 
   if borders_pred.any():
     distmap_pred = ndimage.morphology.distance_transform_edt(
         ~borders_pred, sampling=spacing_mm)
   else:
-    distmap_pred = np.Inf * np.ones(borders_pred.shape)
+    distmap_pred = np.inf * np.ones(borders_pred.shape)
 
   # compute the area of each surface element
   surface_area_map_gt = neighbour_code_to_surface_area[neighbour_code_map_gt]
@@ -348,7 +348,7 @@ def compute_robust_hausdorff(surface_distances, percent):
     perc_distance_gt_to_pred = distances_gt_to_pred[
         min(idx, len(distances_gt_to_pred)-1)]
   else:
-    perc_distance_gt_to_pred = np.Inf
+    perc_distance_gt_to_pred = np.inf
 
   if len(distances_pred_to_gt) > 0:  # pylint: disable=g-explicit-length-test
     surfel_areas_cum_pred = (np.cumsum(surfel_areas_pred) /
@@ -357,7 +357,7 @@ def compute_robust_hausdorff(surface_distances, percent):
     perc_distance_pred_to_gt = distances_pred_to_gt[
         min(idx, len(distances_pred_to_gt)-1)]
   else:
-    perc_distance_pred_to_gt = np.Inf
+    perc_distance_pred_to_gt = np.inf
 
   return max(perc_distance_gt_to_pred, perc_distance_pred_to_gt)
 
@@ -438,6 +438,6 @@ def compute_dice_coefficient(mask_gt, mask_pred):
   """
   volume_sum = mask_gt.sum() + mask_pred.sum()
   if volume_sum == 0:
-    return np.NaN
+    return np.nan
   volume_intersect = (mask_gt & mask_pred).sum()
   return 2*volume_intersect / volume_sum
